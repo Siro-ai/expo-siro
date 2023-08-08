@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "siro-react-native": ["../src/index"],
+      "siro-react-native/*": ["../src/*"]
+    }
+  }
+}
