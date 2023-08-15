@@ -16,9 +16,4 @@ class SiroButton: ExpoView {
               addSubview(buttonView)
     
 	}
-   
-   public func onPress() {
-       print("Button Pressed!")
-   }
-
 }
