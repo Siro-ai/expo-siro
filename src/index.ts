@@ -4,7 +4,7 @@ import { NativeModulesProxy, EventEmitter, Subscription } from 'expo-modules-cor
 // and on native platforms to SiroReactNative.ts
 import SiroReactNativeModule from './SiroReactNativeModule';
 import SiroReactNativeView from './SiroReactNativeView';
-import { ChangeEventPayload, SiroReactNativeViewProps } from './SiroReactNative.types';
+import { ChangeEventPayload, SiroConfig, SiroReactNativeViewProps } from './SiroReactNative.types';
 
 // Get the native constant value.
 export const PI = SiroReactNativeModule.PI;
@@ -23,4 +23,28 @@ export function addChangeListener(listener: (event: ChangeEventPayload) => void)
   return emitter.addListener<ChangeEventPayload>('onChange', listener);
 }
 
-export { SiroReactNativeView, SiroReactNativeViewProps, ChangeEventPayload };
+export function setup(env: 'staging' | 'production') {
+  return SiroReactNativeModule.setup(env);
+}
+
+export function show() {
+  return SiroReactNativeModule.show();
+}
+
+export function hide() {
+  return SiroReactNativeModule.hide();
+}
+
+export function startRecording() {
+  SiroReactNativeModule.startRecording();
+}
+
+export function sendEvent(event: string, data: any) {
+  SiroReactNativeModule.sendEvent(event, data);
+}
+
+export function showModal() {
+  SiroReactNativeModule.showModal();
+}
+
+export { SiroReactNativeViewProps, ChangeEventPayload, SiroReactNativeView };

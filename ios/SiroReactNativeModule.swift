@@ -1,4 +1,5 @@
 import ExpoModulesCore
+import SiroSDK
 
 public class SiroReactNativeModule: Module {
   // Each module class must implement the definition function. The definition consists of components
@@ -11,12 +12,12 @@ public class SiroReactNativeModule: Module {
     Name("SiroReactNative")
 
     // Sets constant properties on the module. Can take a dictionary or a closure that returns a dictionary.
-    Constants([
-      "PI": Double.pi
-    ])
+//    Constants([
+//      "PI": Double.pi
+//    ])
 
     // Defines event names that the module can send to JavaScript.
-    Events("onChange")
+//    Events("onChange")
 
     // Defines a JavaScript synchronous function that runs the native code on the JavaScript thread.
     Function("hello") {
@@ -25,20 +26,59 @@ public class SiroReactNativeModule: Module {
 
     // Defines a JavaScript function that always returns a Promise and whose native code
     // is by default dispatched on the different thread than the JavaScript runtime runs on.
-    AsyncFunction("setValueAsync") { (value: String) in
-      // Send an event to JavaScript.
-      self.sendEvent("onChange", [
-        "value": value
-      ])
-    }
+//    AsyncFunction("setValueAsync") { (value: String) in
+//      // Send an event to JavaScript.
+//      self.sendEvent("onChange", [
+//        "value": value
+//      ])
+//    }
 
     // Enables the module to be used as a native view. Definition components that are accepted as part of the
     // view definition: Prop, Events.
-    View(SiroReactNativeView.self) {
-      // Defines a setter for the `name` prop.
-      Prop("name") { (view: SiroReactNativeView, prop: String) in
-        print(prop)
-      }
+   View(SiroButton.self) {
+     // Defines a setter for the `name` prop.
+     Prop("name") { (view: SiroButton, prop: String) in
+       print(prop)
+     }
+   }
+
+
+    Function("setup") { (environment: String) in
+      print("setup() called.", environment)
+      SiroSDK.setup(environment: .staging)
     }
+
+    Function("startRecording") {
+      print("startRecording() called.")
+      SiroSDK.startRecording()
+    }
+
+    Function("stopRecording") {
+      print("stopRecording() called.")
+      SiroSDK.stopRecording()
+    }
+
+    Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
+      print("sendEvent() called.")
+      SiroSDK.sendEvent(eventName)
+    }
+
+    Function("show") {
+      print("show() called.")
+      SiroSDK.show()
+    }
+
+    Function("hide") {
+      print("hide() called.")
+      SiroSDK.hide()
+    }
+      
+      Function("showModal") {
+          print("showing a modal!!!")
+          DispatchQueue.main.async {
+
+          SiroSDK.show()
+          }
+      }
   }
 }
