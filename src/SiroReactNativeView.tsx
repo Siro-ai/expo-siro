@@ -1,11 +1,9 @@
 import { requireNativeViewManager } from 'expo-modules-core';
 import * as React from 'react';
 
-import { SiroReactNativeViewProps } from './SiroReactNative.types';
-
-const NativeView: React.ComponentType<SiroReactNativeViewProps> =
+const NativeView: React.ComponentType<{}> =
   requireNativeViewManager('SiroReactNative');
 
-export default function SiroReactNativeView(props: SiroReactNativeViewProps) {
+export default function SiroButton(props: {}) {
   return <NativeView {...props} />;
 }
