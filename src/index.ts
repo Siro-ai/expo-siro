@@ -4,18 +4,8 @@ import { NativeModulesProxy, EventEmitter, Subscription } from 'expo-modules-cor
 // and on native platforms to SiroReactNative.ts
 import SiroReactNativeModule from './SiroReactNativeModule';
 import SiroReactNativeView from './SiroReactNativeView';
-import { ChangeEventPayload, SiroConfig, SiroReactNativeViewProps } from './SiroReactNative.types';
+import { ChangeEventPayload, SiroReactNativeViewProps } from './SiroReactNative.types';
 
-// Get the native constant value.
-export const PI = SiroReactNativeModule.PI;
-
-export function hello(): string {
-  return SiroReactNativeModule.hello();
-}
-
-export async function setValueAsync(value: string) {
-  return await SiroReactNativeModule.setValueAsync(value);
-}
 
 const emitter = new EventEmitter(SiroReactNativeModule ?? NativeModulesProxy.SiroReactNative);
 
