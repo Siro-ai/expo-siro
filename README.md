@@ -4,6 +4,8 @@ The expo-siro sdk is a wrapper built around the Swift iOS SDK. It allows you to 
 
 Please note, at this time we only support iOS. If you are interested in integrating Android, please reach out to Jake @ jake@siro.ai.
 
+![Short demo of expo-siro](demo.gif)
+
 ### Requirements
 - iOS 15+
 
