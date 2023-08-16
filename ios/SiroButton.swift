@@ -14,11 +14,5 @@ class SiroButton: ExpoView {
         hostingController = UIHostingController(rootView: button)
               guard let buttonView = hostingController?.view else { return }
               addSubview(buttonView)
-    
 	}
-   
-   public func onPress() {
-       print("Button Pressed!")
-   }
-
 }
