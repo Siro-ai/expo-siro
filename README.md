@@ -96,9 +96,57 @@ ___
 
 ### function stopRecording()
 Stops the currently active recording session. If there is no active recording session, no action is taken.
+___
 
-### function sendEvent(eventName: string, interactionData: InteractionData)
+### function sendEvent(eventName: string, interactionData?: InteractionData)
 Sends an event along with any Lead or Interaction data. Events can trigger actions that control the Siro Recorder. 
+
+```
+import { sendEvent } from 'expo-siro'
+
+interface Coordinates {
+	lat: number
+    long: number
+}
+
+interface Address {
+	street: string
+    city: string
+    state: string
+    zip: string
+}
+
+interface Stage {
+	id: string
+    name?: string
+    color?: string
+    icon?: string
+    won?: boolean
+    interacted?: boolean
+}
+
+interface InteractionData {
+	id: string
+
+    // Optional data
+    note?: string
+    metadata?: any
+    leadCreatedAt?: string
+    contacts?: Contact[]
+    owner?: string
+    leadId?: string
+    coordinates?: Coordinates[]
+    stage?: Stage
+    address?: Address
+    recordingId?: string
+}
+
+const interactionData = {
+	id: string // Only the ID is required
+}
+
+sendEvent('createLead', interactionData)
+```
 ___
 
 ### function showModal() 
