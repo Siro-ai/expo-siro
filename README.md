@@ -46,8 +46,6 @@ platform :ios, 15.0
 	"expo": {
 		// add this block:
 		"ios": {
-			"deploymentTarget": "15.0", // Minimum supported iOS version
-            "useFrameworks": "static", // In order to support the Firebase SDK dependency
 			"infoPlist": {
 				"NSLocationWhenInUseUsageDescription": "Add your description here", // Allows the SDK to access Location data
 				"NSMicrophoneUsageDescription": "Add description here", // Allows the SDK to access the Microphone
