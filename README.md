@@ -16,15 +16,19 @@ Please note, at this time we only support iOS. If you are interested in integrat
 {
   "expo": {
     "name": "my-app",
+
+
 	// Add these lines below
     "plugins": [
-      ["expo-build-properties", 
-      {
-        "ios": {
-              "deploymentTarget": "15.0", // Minimum supported iOS version
-              "useFrameworks": "static", // In order to support the Firebase SDK dependency
-        }
-      }]
+      [
+		"expo-build-properties", 
+		{
+			"ios": {
+				"deploymentTarget": "15.0", // Minimum supported iOS version
+				"useFrameworks": "static", // In order to support the Firebase SDK dependency
+			}
+		}
+	  ]
     ]
   }
 }
@@ -35,7 +39,7 @@ Alternatively, you can add those values to your `Podfile` directly:
 use_frameworks! :linkage => :static
 platform :ios, 15.0
 ```
-3. Additionally, you will need to update your plist. You can do this via the `app.json` file:
+3. Update your plist directly or via the `app.json` file (recommened if using expo): 
 ```
 // app.json
 {
@@ -55,11 +59,11 @@ platform :ios, 15.0
 	}
 }
 ```
-Additionally, you can add these values to your `info.plist` directly.
 4. Build the iOS app by running: `npx expo run:ios`
 
 ### Usage
 1. call `setup` and pass in your `enviornment`. Currently we support `staging` and `production`.
+
 2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. It controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically.
 
 ```
