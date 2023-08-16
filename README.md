@@ -9,14 +9,54 @@ Please note, at this time we only support iOS. If you are interested in integrat
 
 ### Getting Started
 1. Run `npx expo install expo-siro`
-2. Follow iOS SiroSDK set up instructions found here.
-3. In your Podfile be sure to set minimum deployment to ios15
-4. add `use_frameworks! :linkage => :static` to your podfile
-5. Add the following keys to the Info.plist:
-- Privacy - Location When In Use Usage Description
-- Privacy - Microphone Usage Description
-6. Ensure background audio recording is enabled. On Expo you will have to pass in background modes via the `app.json` file.
-Signing & Capabilities -> Background Modes -> check Audio, AirPlay, and Picture in Picture
+2. There are a couple of build settings we will need to tweek, so you'll need to install `expo-build-properties`, by running `npx expo install expo-build-properties`
+3. In `app.json`, add the following to the config:
+```
+// app.json
+{
+  "expo": {
+    "name": "my-app",
+	// Add these lines below
+    "plugins": [
+      ["expo-build-properties", 
+      {
+        "ios": {
+              "deploymentTarget": "15.0", // Minimum supported iOS version
+              "useFrameworks": "static", // In order to support the Firebase SDK dependency
+        }
+      }]
+    ]
+  }
+}
+```
+Alternatively, you can add those values to your `Podfile` directly:
+```
+// Podfile
+use_frameworks! :linkage => :static
+platform :ios, 15.0
+```
+3. Additionally, you will need to update your plist. You can do this via the `app.json` file:
+```
+// app.json
+{
+	"expo": {
+		// add this block:
+		"ios": {
+			"deploymentTarget": "15.0", // Minimum supported iOS version
+            "useFrameworks": "static", // In order to support the Firebase SDK dependency
+			"infoPlist": {
+				"NSLocationWhenInUseUsageDescription": "Add your description here", // Allows the SDK to access Location data
+				"NSMicrophoneUsageDescription": "Add description here", // Allows the SDK to access the Microphone
+				"UIBackgroundModes": {
+					"audio" // Allows recording to occur when app is in background mode
+				}
+			}
+		}
+	}
+}
+```
+Additionally, you can add these values to your `info.plist` directly.
+4. Build the iOS app by running: `npx expo run:ios`
 
 ### Usage
 1. call `setup` and pass in your `enviornment`. Currently we support `staging` and `production`.

@@ -23,6 +23,10 @@ export function startRecording() {
   SiroReactNativeModule.startRecording();
 }
 
+export function stopRecording() {
+  SiroReactNativeModule.stopRecording();
+}
+
 export function sendEvent(event: string, data: any) {
   SiroReactNativeModule.sendEvent(event, data);
 }
