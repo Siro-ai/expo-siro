@@ -38,26 +38,26 @@ const App = () => {
 }
 ```
 
-### API
+## API
 
-#### function setup(env: 'staging' | 'production')
+### function setup(env: 'staging' | 'production')
 Sets up the SiroSDK. Must be called before utilizing the SDK. If `setup` is not called, interactions with the SiroSDK will fail.
 
-#### function startRecording()
+### function startRecording()
 Starts a recording. User will be asked for access to their location + microphone upon calling the `startRecording` function if they have not yet given the SiroSDK access. Once access is granted, `startRecording` will begin recording conversations.
 Please note that there can only ever be one active recording instance. User must be logged in.
 
-#### function stopRecording()
+### function stopRecording()
 Stops the currently active recording session. If there is no active recording session, no action is taken.
 
-#### function sendEvent(eventName: string, interactionData: InteractionData)
+### function sendEvent(eventName: string, interactionData: InteractionData)
 Sends an event along with any Lead or Interaction data. Events can trigger actions that control the Siro Recorder. 
 
-#### function showModal() 
+### function showModal() 
 Show's the Siro Recording modal. The modal has two states:
 - Login Form: Rendered if the user is not currently logged in.
 - Recorder: Rendered if the user has authenticated successfully.
 
-#### function hide()
+### function hide()
 Hides/dismisses the Siro modal.
 # expo-siro
