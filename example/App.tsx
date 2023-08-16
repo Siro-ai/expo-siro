@@ -37,9 +37,9 @@ export default function App() {
       <Button title="Step 6 - Send leadClosed event!" onPress={() => sendEvent('leadClosed', { random: 'data', someNumber: 5, somebool: true, someArray: ['rrr', 2, true] })} />
 
 
-      <TouchableOpacity style={{ padding: 35 }} onPress={showModal}>
-        <SiroReactNative.SiroButton />
-      </TouchableOpacity>
+      {/* <TouchableOpacity style={{ padding: 35 }} onPress={showModal}> */}
+      <SiroReactNative.SiroButton />
+      {/* </TouchableOpacity> */}
     </View>
   );
 }

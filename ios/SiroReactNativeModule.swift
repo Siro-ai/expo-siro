@@ -35,8 +35,8 @@ public class SiroReactNativeModule: Module {
       SiroSDK.stopRecording()
     }
 
-    Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
-      SiroSDK.sendEvent(eventName)
+      Function("sendEvent") { (eventName: String) in
+        SiroSDK.sendEvent(eventName, interactionData: nil)
     }
 
     Function("hide") {

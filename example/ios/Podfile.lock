@@ -628,7 +628,6 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - AnyCodable-FlightSchool (0.6.7)
   - boost (1.76.0)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
@@ -1210,7 +1209,6 @@ PODS:
     - ExpoModulesCore
     - SiroSDK
   - SiroSDK (1.3.0):
-    - AnyCodable-FlightSchool (~> 0.6.7)
     - FirebaseAuth (~> 10.12.0)
     - FirebaseDynamicLinks (~> 10.12.0)
     - FirebaseFirestore (~> 10.12.0)
@@ -1274,7 +1272,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
-    - AnyCodable-FlightSchool
     - BoringSSL-GRPC
     - FirebaseAppCheckInterop
     - FirebaseAuth
@@ -1405,7 +1402,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
-  AnyCodable-FlightSchool: 261cbe76757802b17d471b9059b21e6fa5edf57b
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -1473,7 +1469,7 @@ SPEC CHECKSUMS:
   React-utils: f1d39255e788c280589665da427d574d9ff84df2
   ReactCommon: cda2cdd9f45187316ef45e1cb70e1d2058f9aea1
   SiroReactNative: 61f80447b148861211686eb3c04fa21952036cb8
-  SiroSDK: 956aa5479492ae4b71df20f3f4ddcc407a14dfc9
+  SiroSDK: 3927a12c04dadf9790fc2438729f3019d9d9c82c
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
 
