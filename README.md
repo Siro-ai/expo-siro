@@ -45,7 +45,7 @@ platform :ios, 15.0
 ```
 
 
-3. Update your plist directly or via the `app.json` file (recommened if using expo): 
+4. Update your plist directly or via the `app.json` file (recommened if using expo): 
 ```
 // app.json
 {
@@ -65,7 +65,7 @@ platform :ios, 15.0
 ```
 
 
-4. Build the iOS app by running: `npx expo run:ios`
+5. Build the iOS app by running: `npx expo run:ios`
 
 ### Usage
 1. call `setup` and pass in your `enviornment`. Currently we support `staging` and `production`.
