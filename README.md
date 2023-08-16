@@ -55,9 +55,9 @@ platform :ios, 15.0
 			"infoPlist": {
 				"NSLocationWhenInUseUsageDescription": "Add your description here", // Allows the SDK to access Location data
 				"NSMicrophoneUsageDescription": "Add description here", // Allows the SDK to access the Microphone
-				"UIBackgroundModes": {
+				"UIBackgroundModes": [
 					"audio" // Allows recording to occur when app is in background mode
-				}
+				]
 			}
 		}
 	}
