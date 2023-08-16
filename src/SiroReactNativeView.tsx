@@ -8,7 +8,7 @@ const NativeView: React.ComponentType<{}> =
 
 export default function SiroButton(props: {}) {
   return (
-    <TouchableOpacity style={{ padding: 35 }} onPress={SiroReactNativeModule.onPress}>
+    <TouchableOpacity style={{ padding: 35 }} onPress={() => SiroReactNativeModule.showModal()}>
       <NativeView {...props} />
     </TouchableOpacity>
   )
