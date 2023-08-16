@@ -11,27 +11,7 @@ public class SiroReactNativeModule: Module {
     // The module will be accessible from `requireNativeModule('SiroReactNative')` in JavaScript.
     Name("SiroReactNative")
 
-    // Sets constant properties on the module. Can take a dictionary or a closure that returns a dictionary.
-//    Constants([
-//      "PI": Double.pi
-//    ])
 
-    // Defines event names that the module can send to JavaScript.
-//    Events("onChange")
-
-    // Defines a JavaScript synchronous function that runs the native code on the JavaScript thread.
-    Function("hello") {
-      return "Hello world! 👋"
-    }
-
-    // Defines a JavaScript function that always returns a Promise and whose native code
-    // is by default dispatched on the different thread than the JavaScript runtime runs on.
-//    AsyncFunction("setValueAsync") { (value: String) in
-//      // Send an event to JavaScript.
-//      self.sendEvent("onChange", [
-//        "value": value
-//      ])
-//    }
 
     // Enables the module to be used as a native view. Definition components that are accepted as part of the
     // view definition: Prop, Events.
@@ -44,41 +24,36 @@ public class SiroReactNativeModule: Module {
 
 
     Function("setup") { (environment: String) in
-      print("setup() called.", environment)
       SiroSDK.setup(environment: .staging)
     }
 
     Function("startRecording") {
-      print("startRecording() called.")
-      SiroSDK.startRecording()
+        DispatchQueue.main.async {
+            SiroSDK.startRecording()
+        }
+      
     }
 
     Function("stopRecording") {
-      print("stopRecording() called.")
       SiroSDK.stopRecording()
     }
 
     Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
-      print("sendEvent() called.")
-        SiroSDK.sendEvent(eventName, interactionData: nil)
-    }
-
-    Function("show") {
-      print("show() called.")
-      SiroSDK.show()
+        DispatchQueue.main.async {
+            SiroSDK.sendEvent(eventName, interactionData: nil)
+        }
     }
 
     Function("hide") {
-      print("hide() called.")
-      SiroSDK.hide()
+        DispatchQueue.main.async {
+            SiroSDK.hide()
+        }
     }
       
-      Function("showModal") {
-          print("showing a modal!!!")
-          DispatchQueue.main.async {
-
-          SiroSDK.show()
-          }
+    Function("showModal") {
+      DispatchQueue.main.async {
+        SiroSDK.show()
       }
+    }
   }
 }
