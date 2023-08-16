@@ -23,12 +23,13 @@ Signing & Capabilities -> Background Modes -> check Audio, AirPlay, and Picture 
 2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. It controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically.
 
 ```
+import { View } from 'react-native'
 import { SiroButton } from 'expo-siro'
 
 const App = () => {
 	useEffect(() => {
 		setup('staging')
-	})
+	}, [])
 
 	return (
 		<View>
