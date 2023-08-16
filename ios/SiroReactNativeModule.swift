@@ -28,19 +28,29 @@ public class SiroReactNativeModule: Module {
     }
 
     Function("startRecording") {
-      SiroSDK.startRecording()
+        DispatchQueue.main.async {
+            SiroSDK.startRecording()
+        }
+      
     }
 
     Function("stopRecording") {
+      DispatchQueue.main.async {
       SiroSDK.stopRecording()
+
+      }
     }
 
-      Function("sendEvent") { (eventName: String) in
-        SiroSDK.sendEvent(eventName, interactionData: nil)
+    Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
+        DispatchQueue.main.async {
+            SiroSDK.sendEvent(eventName, interactionData: nil)
+        }
     }
 
     Function("hide") {
-      SiroSDK.hide()
+        DispatchQueue.main.async {
+            SiroSDK.hide()
+        }
     }
       
     Function("showModal") {
