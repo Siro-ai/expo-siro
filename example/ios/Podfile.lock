@@ -628,7 +628,6 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - AnyCodable-FlightSchool (0.6.7)
   - boost (1.76.0)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
@@ -1209,8 +1208,7 @@ PODS:
   - SiroReactNative (0.1.0):
     - ExpoModulesCore
     - SiroSDK
-  - SiroSDK (1.3.0):
-    - AnyCodable-FlightSchool (~> 0.6.7)
+  - SiroSDK (1.3.1):
     - FirebaseAuth (~> 10.12.0)
     - FirebaseDynamicLinks (~> 10.12.0)
     - FirebaseFirestore (~> 10.12.0)
@@ -1268,13 +1266,12 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - SiroReactNative (from `../../ios`)
-  - SiroSDK (from `https://github.com/Siro-ai/SiroSDK`, tag `1.3.0`)
+  - SiroSDK (from `~/Developer/siro/SiroSDK`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - abseil
-    - AnyCodable-FlightSchool
     - BoringSSL-GRPC
     - FirebaseAppCheckInterop
     - FirebaseAuth
@@ -1393,19 +1390,12 @@ EXTERNAL SOURCES:
   SiroReactNative:
     :path: "../../ios"
   SiroSDK:
-    :git: https://github.com/Siro-ai/SiroSDK
-    :tag: 1.3.0
+    :path: "~/Developer/siro/SiroSDK"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
-CHECKOUT OPTIONS:
-  SiroSDK:
-    :git: https://github.com/Siro-ai/SiroSDK
-    :tag: 1.3.0
-
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
-  AnyCodable-FlightSchool: 261cbe76757802b17d471b9059b21e6fa5edf57b
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -1449,13 +1439,13 @@ SPEC CHECKSUMS:
   React-Core: aaacca67f9ca54f142827e67f44bfbd815875eb6
   React-CoreModules: 32fab1d62416849a3b6dac6feff9d54e5ddc2d1e
   React-cxxreact: 37765b4975541105b2a3322a4b473417c158c869
-  React-debug: 93e705e6a34327c27c6f667d0f896fa90c676fe2
+  React-debug: 93994b0a7094a975ceb215e5c52ebe095c95e668
   React-hermes: 935ae71fb3d7654e947beba8498835cd5e479707
   React-jsi: ec628dc7a15ffea969f237b0ea6d2fde212b19dd
   React-jsiexecutor: 59d1eb03af7d30b7d66589c410f13151271e8006
   React-jsinspector: b511447170f561157547bc0bef3f169663860be7
   React-logger: c5b527272d5f22eaa09bb3c3a690fee8f237ae95
-  React-NativeModulesApple: 620110934109fefbf963a66fe819de79714a6a0b
+  React-NativeModulesApple: bf0a8bd09745ff39f6a5e6658910e9b1af9e9215
   React-perflogger: 6bd153e776e6beed54c56b0847e1220a3ff92ba5
   React-RCTActionSheet: c0b62af44e610e69d9a2049a682f5dba4e9dff17
   React-RCTAnimation: fe7005136b58f58871cab2f70732343b6e330d30
@@ -1469,14 +1459,14 @@ SPEC CHECKSUMS:
   React-RCTVibration: ea3a68a49873a54ced927c90923fc6932baf344a
   React-rncore: 9672a017af4a7da7495d911f0b690cbcae9dd18d
   React-runtimeexecutor: 369ae9bb3f83b65201c0c8f7d50b72280b5a1dbc
-  React-runtimescheduler: 512c567151e391a352e67e04e7a479ddc6f2a0a0
-  React-utils: f1d39255e788c280589665da427d574d9ff84df2
-  ReactCommon: cda2cdd9f45187316ef45e1cb70e1d2058f9aea1
+  React-runtimescheduler: 4806d692a7892de546dc5beeddf5781de7efaee1
+  React-utils: ac7c42dbe62f1cf40341d55b9e0a9a91aea485c0
+  ReactCommon: cc8fbfc3bc89d15db3538f05a8367b7e7576a04b
   SiroReactNative: 61f80447b148861211686eb3c04fa21952036cb8
-  SiroSDK: 956aa5479492ae4b71df20f3f4ddcc407a14dfc9
+  SiroSDK: a867cc5fb9ba0bdce2fd94d34dc6ea207f706fcc
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
 
-PODFILE CHECKSUM: 8164b412552c85187723277eb52befcb6b3cb0f6
+PODFILE CHECKSUM: 5f8fb5c87a56d8563912fbde151a676159fbf011
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

@@ -60,7 +60,7 @@ public class SiroReactNativeModule: Module {
 
     Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
       print("sendEvent() called.")
-      SiroSDK.sendEvent(eventName)
+        SiroSDK.sendEvent(eventName, interactionData: nil)
     }
 
     Function("show") {
