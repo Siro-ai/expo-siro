@@ -77,7 +77,7 @@ platform :ios, 15.0
 
 ```
 import { View } from 'react-native'
-import { SiroButton } from 'expo-siro'
+import { SiroButton, setup } from 'expo-siro'
 
 const App = () => {
 	useEffect(() => {
