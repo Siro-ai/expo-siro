@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 import * as SiroReactNative from 'siro-react-native';
 
@@ -36,10 +36,7 @@ export default function App() {
       <Button title="Step 5 - Send createLead event!" onPress={() => sendEvent('createLead', { random: 'data', someNumber: 5, somebool: true, someArray: ['rrr', 2, true] })} />
       <Button title="Step 6 - Send leadClosed event!" onPress={() => sendEvent('leadClosed', { random: 'data', someNumber: 5, somebool: true, someArray: ['rrr', 2, true] })} />
 
-
-      <TouchableOpacity style={{ padding: 35 }} onPress={showModal}>
-        <SiroReactNative.SiroButton />
-      </TouchableOpacity>
+      <SiroReactNative.SiroButton />
     </View>
   );
 }
