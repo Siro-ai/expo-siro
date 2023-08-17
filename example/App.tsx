@@ -65,6 +65,8 @@ export default function App() {
       <Button title="Step 6 - Send leadClosed event!" onPress={() => sendEvent('leadClosed')} />
 
       <SiroReactNative.SiroButton />
+
+      <Button title="Logout" color='red' onPress={() => SiroReactNative.logout()} />
     </View>
   );
 }

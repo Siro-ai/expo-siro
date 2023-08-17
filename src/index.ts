@@ -57,4 +57,11 @@ export function showModal() {
   SiroReactNativeModule.showModal();
 }
 
+/**
+ * Logs the user out of the Siro.
+ */
+export function logout() {
+  SiroReactNativeModule.logout();
+}
+
 export { SiroButton };
