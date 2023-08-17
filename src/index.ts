@@ -46,7 +46,7 @@ export function startRecording() {
  * @param {string} event The event to send.
  * @param {Interaction} data The data to send with the event.
  */
-export function sendEvent(event: string, data: Interaction) {
+export function sendEvent(event: string, data?: Interaction) {
   SiroReactNativeModule.sendEvent(event, data);
 }
 
