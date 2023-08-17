@@ -35,7 +35,10 @@ public class SiroReactNativeModule: Module {
     }
 
     Function("stopRecording") {
+      DispatchQueue.main.async {
       SiroSDK.stopRecording()
+
+      }
     }
 
     Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in

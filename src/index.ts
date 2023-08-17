@@ -4,26 +4,26 @@ import { NativeModulesProxy, EventEmitter, Subscription } from 'expo-modules-cor
 // and on native platforms to SiroReactNative.ts
 import SiroReactNativeModule from './SiroReactNativeModule';
 import SiroButton from './SiroReactNativeView';
-import { Interaction, SiroEnv } from './types';
+import { Interaction, Environment } from './types';
 
 
 /**
  * Sets up the SiroSDK.
- * @param {SiroEnv} env The environment to use.
+ * @param {Environment} env The environment to use.
  */
-export function setup(env: SiroEnv) {
+export function setup(env: Environment) {
   return SiroReactNativeModule.setup(env);
 }
 
 /**
- * Displays the Siro Modal.
+ * Displays the Siro Recording Modal.
  */
 export function show() {
   return SiroReactNativeModule.show();
 }
 
 /**
- * Hides the Siro Modal.
+ * Hides the Siro Recording Modal.
  */
 export function hide() {
   return SiroReactNativeModule.hide();
@@ -31,17 +31,24 @@ export function hide() {
 
 
 /**
- * Starts the Siro Recorder. Additionally updates the SiroButton
- * to display the recording state.
+ * Starts the Siro Recorder, if not already started. Does nothing if a recording is already in progress.
  */
 export function startRecording() {
   SiroReactNativeModule.startRecording();
 }
 
 /**
- * Can send an event to the SiroSDK. Custom events can be used to
- * trigger custom actions in the SiroSDK. These actions can include
- * starting, stopping, or pausing the Siro Recorder.
+ * Stops the Siro Recorder, if not already stopped. Does nothing if a recording is not in progress.
+ */
+export function stopRecording() {
+  SiroReactNativeModule.stopRecording();
+}
+
+/**
+ * Sends an event, which can trigger recorder actions (e.g., start, stop, or discard a recording).
+ * 
+ * Include the `data` parameter to send additional data with the event. The data is specific to the event.
+ * If your backend already sends Siro lead and interaction data, it is still important for you to include the data field with the id, leadId, and userId, so Siro can associate recordings with the correct records in your database.
  * 
  * @param {string} event The event to send.
  * @param {Interaction} data The data to send with the event.
