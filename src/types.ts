@@ -23,29 +23,39 @@ export interface Stage {
 	name?: string;
 	color?: string;
 	icon?: string;
-	won?: boolean;
-	interacted?: boolean;
+	// won indicates whether or not this stage represents a successful outcome.
+	won?: boolean; 
+	// interacted indicates whether or not this stage represents an interaction. For example, a "no show" stage would not be considered an interaction.
+	interacted?: boolean; 
 }
+
 
 export interface Interaction {
-	id: string;
+	// id is the unique ID of the interaction in your database.
+	id: string; 
 
-	// Optional fields
-	userId?: string; // External User ID
-	note?: string;
-	recordingId?: string;
-	leadCreatedAt?: Date; // Optional Lead creation date
-	dateCreated?: Date; // Interaction creation date
-	contacts?: Contact[];
-	owner?: string;
+	// Optional fields	
+	// leadId is the unique id of this lead in your database.
 	leadId?: string;
+
+	// userId is the ID of the currently logged in user.
+	userId?: string; 
+	note?: string;
+
+	// stage is the current stage of the lead. If this interaction involved a stage change, use the stage that the lead was changed to.
+	stage?: Stage; 
 	coordinates?: Coordinates;
-	stage?: Stage;
 	address?: Address;
-	metadata?: { [key: string]: any }; // Used for any additional data
+	// dateCreated is the date of the interaction. This is most likely the current date.
+	dateCreated?: Date; 
+	// leadDateCreated is the date that this lead was created.
+	leadDateCreated?: Date; 
+	contacts?: Contact[];
+	// metadata is used for any additional data
+	metadata?: { [key: string]: any }; 
 }
 
-export enum SiroEnv {
+export enum Environment {
 	staging = 'staging',
 	production = 'production',
 }
