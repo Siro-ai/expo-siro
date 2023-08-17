@@ -18,13 +18,9 @@ Please note, at this time we only support iOS. If you are interested in integrat
 
 3. In `app.json`, add the following to the config:
 ```json
-// app.json
 {
   "expo": {
     "name": "my-app",
-
-
-	// Add these lines below
     "plugins": [
       [
 		"expo-build-properties", 
@@ -41,7 +37,6 @@ Please note, at this time we only support iOS. If you are interested in integrat
 ```
 Alternatively, you can add those values to your `Podfile` directly:
 ```ruby
-// Podfile
 use_frameworks! :linkage => :static
 platform :ios, 15.0
 ```
@@ -49,10 +44,8 @@ platform :ios, 15.0
 
 4. Update your plist directly or via the `app.json` file (recommened if using expo): 
 ```json
-// app.json
 {
 	"expo": {
-		// add this block:
 		"ios": {
 			"infoPlist": {
 				"NSLocationWhenInUseUsageDescription": "Add your description here",
