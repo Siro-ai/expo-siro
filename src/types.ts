@@ -14,8 +14,8 @@ export interface Contact {
 }
 
 export interface Coordinates {
-	lat: number;
-	long: number;
+	latitude: number;
+	longitude: number;
 }
 
 export interface Stage {
@@ -33,6 +33,7 @@ export interface Interaction {
 	// Optional fields
 	userId?: string; // External User ID
 	note?: string;
+	recordingId?: string;
 	leadCreatedAt?: Date; // Optional Lead creation date
 	dateCreated?: Date; // Interaction creation date
 	contacts?: Contact[];
