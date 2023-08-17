@@ -35,7 +35,9 @@ public class SiroReactNativeModule: Module {
     }
 
     Function("stopRecording") {
-      SiroSDK.stopRecording()
+      DispatchQueue.main.async {
+        SiroSDK.stopRecording()
+      }
     }
 
     Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
@@ -53,6 +55,12 @@ public class SiroReactNativeModule: Module {
     Function("showModal") {
       DispatchQueue.main.async {
         SiroSDK.show()
+      }
+    }
+
+    Function("logout") {
+      DispatchQueue.main.async {
+        SiroSDK.logout()
       }
     }
   }
