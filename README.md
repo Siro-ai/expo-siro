@@ -17,21 +17,17 @@ Please note, at this time we only support iOS. If you are interested in integrat
 
 
 3. In `app.json`, add the following to the config:
-```
-// app.json
+```json
 {
   "expo": {
     "name": "my-app",
-
-
-	// Add these lines below
     "plugins": [
       [
 		"expo-build-properties", 
 		{
 			"ios": {
-				"deploymentTarget": "15.0", // Minimum supported iOS version
-				"useFrameworks": "static", // In order to support the Firebase SDK dependency
+				"deploymentTarget": "15.0",
+				"useFrameworks": "static",
 			}
 		}
 	  ]
@@ -40,26 +36,21 @@ Please note, at this time we only support iOS. If you are interested in integrat
 }
 ```
 Alternatively, you can add those values to your `Podfile` directly:
-```
-// Podfile
+```ruby
 use_frameworks! :linkage => :static
 platform :ios, 15.0
 ```
 
 
 4. Update your plist directly or via the `app.json` file (recommened if using expo): 
-```
-// app.json
+```json
 {
 	"expo": {
-		// add this block:
 		"ios": {
 			"infoPlist": {
-				"NSLocationWhenInUseUsageDescription": "Add your description here", // Allows the SDK to access Location data
-				"NSMicrophoneUsageDescription": "Add description here", // Allows the SDK to access the Microphone
-				"UIBackgroundModes": [
-					"audio" // Allows recording to occur when app is in background mode
-				]
+				"NSLocationWhenInUseUsageDescription": "Add your description here",
+				"NSMicrophoneUsageDescription": "Add description here",
+				"UIBackgroundModes": [ "audio" ]
 			}
 		}
 	}
@@ -75,7 +66,7 @@ platform :ios, 15.0
 
 2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. It controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically.
 
-```
+```typescript
 import { View } from 'react-native'
 import { SiroButton, setup } from 'expo-siro'
 
@@ -114,7 +105,7 @@ ___
 ### function sendEvent(eventName: string, interactionData?: InteractionData)
 Sends an event along with any Lead or Interaction data. Events can trigger actions that control the Siro Recorder. 
 
-```
+```typescript
 import { sendEvent } from 'expo-siro'
 
 interface Coordinates {
@@ -138,20 +129,29 @@ interface Stage {
     interacted?: boolean
 }
 
-interface InteractionData {
-	id: string
+interface Interaction {
+	// id is the unique ID of the interaction in your database.
+	id: string; 
 
-    // Optional data
-    note?: string
-    metadata?: any
-    leadCreatedAt?: string
-    contacts?: Contact[]
-    owner?: string
-    leadId?: string
-    coordinates?: Coordinates[]
-    stage?: Stage
-    address?: Address
-    recordingId?: string
+	// Optional fields	
+	// leadId is the unique id of this lead in your database.
+	leadId?: string;
+
+	// userId is the ID of the currently logged in user.
+	userId?: string; 
+	note?: string;
+
+	// stage is the current stage of the lead. If this interaction involved a stage change, use the stage that the lead was changed to.
+	stage?: Stage; 
+	coordinates?: Coordinates;
+	address?: Address;
+	// dateCreated is the date of the interaction. This is most likely the current date.
+	dateCreated?: Date; 
+	// leadDateCreated is the date that this lead was created.
+	leadDateCreated?: Date; 
+	contacts?: Contact[];
+	// metadata is used for any additional data
+	metadata?: { [key: string]: any }; 
 }
 
 const interactionData = {
