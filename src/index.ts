@@ -64,4 +64,6 @@ export function showModal() {
   SiroReactNativeModule.showModal();
 }
 
-export { SiroButton };
+
+
+export { SiroButton, Environment, Interaction };

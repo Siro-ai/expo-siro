@@ -24,9 +24,15 @@ public class SiroReactNativeModule: Module {
 
 
     Function("setup") { (environment: String) in
-      SiroSDK.setup(environment: .staging)
+    
+        
+        guard let environmentEnum = SKEnvironment(rawValue: environment) else {
+            print("Invalid Enviornment set. Please use either staging or production")
+            return
+        }
+        SiroSDK.setup(environment: environmentEnum)
     }
-
+      
     Function("startRecording") {
         DispatchQueue.main.async {
             SiroSDK.startRecording()
