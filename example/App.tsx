@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 import * as SiroReactNative from 'siro-react-native';
-import { Interaction, Environment } from 'siro-react-native/types';
 
-const interaction: Interaction = {
+const interaction: SiroReactNative.Interaction = {
   id: '123',
 
   userId: 'externalId',
@@ -36,14 +35,18 @@ export default function App() {
   }, [])
 
   const setupSiro = () => {
-    SiroReactNative.setup(Environment.staging);
+    SiroReactNative.setup(SiroReactNative.Environment.staging);
   }
 
   const startRecording = () => {
     SiroReactNative.startRecording();
   }
 
-  const sendEvent = (eventName: string, data?: Interaction) => {
+  const stopRecording = () => {
+    SiroReactNative.stopRecording();
+  }
+
+  const sendEvent = (eventName: string, data?: SiroReactNative.Interaction) => {
     SiroReactNative.sendEvent(eventName, data);
   }
 
@@ -62,6 +65,7 @@ export default function App() {
       <Button title="Step 4 - Send dropPin event!" onPress={() => sendEvent('dropPin', interaction)} />
       <Button title="Step 5 - Send createLead event!" onPress={() => sendEvent('createLead')} />
       <Button title="Step 6 - Send leadClosed event!" onPress={() => sendEvent('leadClosed')} />
+      <Button title="Step 7 - Stop Recording!" onPress={() => stopRecording()} />
 
       <SiroReactNative.SiroButton />
     </View>
