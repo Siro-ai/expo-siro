@@ -12,6 +12,7 @@ import { Interaction, Environment } from './types';
  * @param {Environment} env The environment to use.
  */
 export function setup(env: Environment) {
+  console.log("ENVIORNMENTTTTT", env)
   return SiroReactNativeModule.setup(env);
 }
 
