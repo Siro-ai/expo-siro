@@ -43,7 +43,7 @@ export default function App() {
     SiroReactNative.startRecording();
   }
 
-  const sendEvent = (eventName: string, data?: any) => {
+  const sendEvent = (eventName: string, data?: Interaction) => {
     SiroReactNative.sendEvent(eventName, data);
   }
 
