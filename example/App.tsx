@@ -2,17 +2,16 @@ import { useEffect } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 import * as SiroReactNative from 'siro-react-native';
-import { Interaction, SiroEnv } from 'siro-react-native/types';
+// import { Interaction, Environment } from 'siro-react-native/types';
 
-const interaction: Interaction = {
+const interaction = {
   id: '123',
 
   userId: 'externalId',
   note: 'Got the sale!',
-  leadCreatedAt: new Date(),
+  leadDateCreated: new Date(),
   dateCreated: new Date(),
   contacts: [],
-  owner: 'ownerId',
   leadId: 'leadId',
   coordinates: { latitude: 0, longitude: 0 },
   stage: {
@@ -37,14 +36,14 @@ export default function App() {
   }, [])
 
   const setupSiro = () => {
-    SiroReactNative.setup(SiroEnv.staging);
+    SiroReactNative.setup('production');
   }
 
   const startRecording = () => {
     SiroReactNative.startRecording();
   }
 
-  const sendEvent = (eventName: string, data?: Interaction) => {
+  const sendEvent = (eventName: string, data?: any) => {
     SiroReactNative.sendEvent(eventName, data);
   }
 
