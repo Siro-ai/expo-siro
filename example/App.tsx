@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 import * as SiroReactNative from 'siro-react-native';
-// import { Interaction, Environment } from 'siro-react-native/types';
+import { Interaction, Environment } from 'siro-react-native/types';
 
-const interaction = {
+const interaction: Interaction = {
   id: '123',
 
   userId: 'externalId',
@@ -36,7 +36,7 @@ export default function App() {
   }, [])
 
   const setupSiro = () => {
-    SiroReactNative.setup('production');
+    SiroReactNative.setup(Environment.staging);
   }
 
   const startRecording = () => {
