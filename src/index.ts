@@ -58,7 +58,7 @@ export function sendEvent(event: string, data?: Interaction) {
 }
 
 /**
- * Dismisses the Siro Modal.
+ * Shows the Siro Modal.
  */
 export function showModal() {
   SiroReactNativeModule.showModal();
