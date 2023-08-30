@@ -59,6 +59,7 @@ platform :ios, 15.0
 
 
 5. Build the iOS app by running: `npx expo run:ios`
+Please note that you must run your expo app in expo development mode via `npx expo run:ios`. Running the app in expo-go (using `npx expo start` will not work as `expo-siro` uses Native Modules. If you do decide that you still would like to use expo go, you can conditioanlly import and use `expo-siro` by using `expo-constants`, see [docs here](https://docs.expo.dev/versions/latest/sdk/constants/#appownership). 
 
 ### Usage
 1. call `setup` and pass in your `enviornment`. Currently we support `staging` and `production`.
