@@ -35,7 +35,7 @@ export default function App() {
   }, [])
 
   const setupSiro = () => {
-    SiroReactNative.setup(SiroReactNative.Environment.production);
+    SiroReactNative.setup(SiroReactNative.Environment.staging);
   }
 
   const startRecording = () => {
