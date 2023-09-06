@@ -64,9 +64,7 @@ Please note that you must run your expo app in expo development mode via `npx ex
 ### Usage
 1. call `setup` and pass in your `enviornment`. Currently we support `staging` and `production`.
 
-2. Allow your users to login to Siro. You can use the `SiroButton`, as it fully manages the user lifecycle. On tapping the `SiroButton` a modal will be shown that prompts the user to log in. Alternatively, you can 
-
-2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. It controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically. 
+2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. The `SiroButton` controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically. 
 
 Please note, users must login before recording, or sending events via the `sendEvent` function. Attempting to record, or `sendEvent`s before logging in will fail. `SiroButton` fully manages the user lifecycle. Upon tapping the `SiroButton` a Login form will be displayed if the user is currently not logged in. If the user is currently logged in, the `SiroButton` will start/stop the recorder. Alternatively, you can show/hide the modal with `showModal` and `hide` functions.
 
