@@ -59,20 +59,29 @@ platform :ios, 15.0
 
 
 5. Build the iOS app by running: `npx expo run:ios`
+Please note that you must run your expo app in expo development mode via `npx expo run:ios`. Running the app in expo-go (using `npx expo start` will not work as `expo-siro` uses Native Modules. If you do decide that you still would like to use expo go, you can conditioanlly import and use `expo-siro` by using `expo-constants`, see [docs here](https://docs.expo.dev/versions/latest/sdk/constants/#appownership). 
 
 ### Usage
 1. call `setup` and pass in your `enviornment`. Currently we support `staging` and `production`.
 
+2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. The `SiroButton` controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically. 
 
-2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. It controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically.
+Please note, users must login before recording, or sending events via the `sendEvent` function. Attempting to record, or `sendEvent`s before logging in will fail. `SiroButton` fully manages the user lifecycle. Upon tapping the `SiroButton` a Login form will be displayed if the user is currently not logged in. If the user is currently logged in, the `SiroButton` will start/stop the recorder. Alternatively, you can show/hide the modal with `showModal` and `hide` functions.
 
 ```typescript
 import { View } from 'react-native'
-import { SiroButton, setup } from 'expo-siro'
+import { SiroButton, setup, showModal, hide } from 'expo-siro'
 
 const App = () => {
 	useEffect(() => {
 		setup('staging')
+
+		// Alternatively, show and hide the modal
+		// show the Siro modal:
+		showModal();
+
+		// Hide Modal
+		hide();
 	}, [])
 
 	return (
