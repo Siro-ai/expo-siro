@@ -68,6 +68,8 @@ export default function App() {
       <Button title="Step 7 - Stop Recording!" onPress={() => stopRecording()} />
 
       <SiroReactNative.SiroButton />
+
+      <Button title="Logout" color='red' onPress={() => SiroReactNative.logout()} />
     </View>
   );
 }

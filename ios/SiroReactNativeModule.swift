@@ -42,8 +42,7 @@ public class SiroReactNativeModule: Module {
 
     Function("stopRecording") {
       DispatchQueue.main.async {
-      SiroSDK.stopRecording()
-
+        SiroSDK.stopRecording()
       }
     }
 
@@ -62,6 +61,12 @@ public class SiroReactNativeModule: Module {
     Function("showModal") {
       DispatchQueue.main.async {
         SiroSDK.show()
+      }
+    }
+
+    Function("logout") {
+      DispatchQueue.main.async {
+        SiroSDK.logout()
       }
     }
   }
