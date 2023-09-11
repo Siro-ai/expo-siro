@@ -21,6 +21,22 @@ public class SiroReactNativeModule: Module {
        print(prop)
      }
    }
+      
+      Property("visible") {
+          return SiroSDK.visibile
+      }
+
+      Property("initialized") {
+          return SiroSDK.initialized
+      }
+
+     Property("recordingStatus") {
+         return SiroSDK.recordingStatus
+     }
+      
+     Property("isLoggedIn") {
+         return SiroSDK.isLoggedIn
+     }
 
 
     Function("setup") { (environment: String) in
