@@ -68,4 +68,9 @@ export function showModal() {
   SiroReactNativeModule.showModal();
 }
 
+export function isUserLoggedIn() {
+  return SiroReactNativeModule.isUserLoggedIn() as boolean;
+}
+export const isLoggedIn = SiroReactNativeModule.isLoggedIn;
+
 export { SiroButton, Environment, Interaction };

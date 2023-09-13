@@ -28,20 +28,14 @@ public class SiroReactNativeModule: Module {
 
       Property("initialized") {
           return SiroSDK.initialized
-      }
+      } 
 
-     Property("recordingStatus") {
-         return SiroSDK.recordingStatus
-     }
-      
-     Property("isLoggedIn") {
-         return SiroSDK.isLoggedIn
+      Function("isUserLoggedIn") {
+          return SiroSDK.isUserLoggedIn()
      }
 
 
     Function("setup") { (environment: String) in
-    
-        
         guard let environmentEnum = SKEnvironment(rawValue: environment) else {
             print("Invalid Enviornment set. Please use either staging or production")
             return

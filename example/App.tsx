@@ -54,9 +54,17 @@ export default function App() {
     SiroReactNative.showModal();
   };
 
+  const isUserLoggedIn = () => {
+    console.log("loggedIn function", SiroReactNative.isUserLoggedIn());
+  };
+
+  setInterval(() => {
+    isUserLoggedIn();
+  }, 5000);
   return (
     <View style={styles.container}>
       <Text style={{ marginBottom: 20 }}>SiroSDK Example App</Text>
+      <Text>Is user logged in {String(SiroReactNative.isUserLoggedIn())}</Text>
       <Button title="Step 1 - Login to Siro" onPress={showModal} />
       <Button title="Step 2 - Start Recording!" onPress={startRecording} />
 
