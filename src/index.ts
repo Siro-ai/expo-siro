@@ -10,7 +10,7 @@ import { Interaction, Environment } from "./types";
 export const initialized = SiroReactNativeModule.initialized as boolean;
 
 /**
- * Wether the SiroSDK Modal is currently visible.
+ * Whether the SiroSDK Modal is currently visible.
  */
 export const visible = SiroReactNativeModule.visible as boolean;
 
