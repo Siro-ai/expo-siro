@@ -1,6 +1,6 @@
 {
   "name": "expo-siro",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "A React Native wrapper for the iOS SiroSDK",
   "main": "build/index.js",
   "types": "build/index.d.ts",
