@@ -1,17 +1,19 @@
-import {
-  NativeModulesProxy,
-  EventEmitter,
-  Subscription,
-} from "expo-modules-core";
-
 // Import the native module. On web, it will be resolved to SiroReactNative.web.ts
 // and on native platforms to SiroReactNative.ts
 import SiroReactNativeModule from "./SiroReactNativeModule";
 import SiroButton from "./SiroReactNativeView";
 import { Interaction, Environment } from "./types";
 
-export const initialized = SiroReactNativeModule.initialized;
-export const visible = SiroReactNativeModule.visible;
+/**
+ * Whether the SiroSDK has been initialized.
+ */
+export const initialized = SiroReactNativeModule.initialized as boolean;
+
+/**
+ * Wether the SiroSDK Modal is currently visible.
+ */
+export const visible = SiroReactNativeModule.visible as boolean;
+
 /**
  * Sets up the SiroSDK.
  * @param {Environment} env The environment to use.
@@ -68,9 +70,12 @@ export function showModal() {
   SiroReactNativeModule.showModal();
 }
 
+/**
+ * Returns a boolean indicating whether the user is logged in.
+ */
+
 export function isUserLoggedIn() {
   return SiroReactNativeModule.isUserLoggedIn() as boolean;
 }
-export const isLoggedIn = SiroReactNativeModule.isLoggedIn;
 
 export { SiroButton, Environment, Interaction };
