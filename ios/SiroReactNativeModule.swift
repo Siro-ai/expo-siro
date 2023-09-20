@@ -32,20 +32,6 @@ public class SiroReactNativeModule: Module {
         }
         SiroSDK.setup(environment: environmentEnum)
     }
-      
-    Function("startRecording") {
-        DispatchQueue.main.async {
-            SiroSDK.startRecording()
-        }
-      
-    }
-
-    Function("stopRecording") {
-      DispatchQueue.main.async {
-      SiroSDK.stopRecording()
-
-      }
-    }
 
     Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
         DispatchQueue.main.async {
