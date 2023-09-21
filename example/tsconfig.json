@@ -6,5 +6,6 @@
       "siro-react-native": ["../src/index"],
       "siro-react-native/*": ["../src/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

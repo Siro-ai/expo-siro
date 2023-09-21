@@ -103,7 +103,9 @@ Sets up the SiroSDK. Must be called before utilizing the SDK. If `setup` is not 
 
 ---
 
-Please note that there can only ever be one active recording instance. User must be logged in.
+### function isUserLoggedIn()
+
+Returns a boolean indicating whether the user is logged into the SiroSDK.
 
 ---
 
@@ -112,6 +114,8 @@ Please note that there can only ever be one active recording instance. User must
 Sends an event along with any Lead or Interaction data. Events can trigger actions that control the Siro Recorder.
 
 Please note, events must be configured to start, stop, and pause the recorder. Contact chris@siro.ai for event configuration.
+
+
 
 ```typescript
 import { sendEvent } from "expo-siro";
