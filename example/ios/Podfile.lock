@@ -1208,7 +1208,7 @@ PODS:
   - SiroReactNative (0.7.7):
     - ExpoModulesCore
     - SiroSDK (~> 1.3.7)
-  - SiroSDK (1.3.7):
+  - SiroSDK (1.3.9):
     - FirebaseAuth (~> 10.12.0)
     - FirebaseDynamicLinks (~> 10.12.0)
     - FirebaseFirestore (~> 10.12.0)
@@ -1266,7 +1266,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - SiroReactNative (from `../../ios`)
-  - SiroSDK (from `~/development/siro/SiroSDK`)
+  - SiroSDK (from `https://github.com/Siro-ai/SiroSDK`, tag `1.3.9`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1390,10 +1390,15 @@ EXTERNAL SOURCES:
   SiroReactNative:
     :path: "../../ios"
   SiroSDK:
-    :path: "~/development/siro/SiroSDK"
-    :tag: 1.3.7
+    :git: https://github.com/Siro-ai/SiroSDK
+    :tag: 1.3.9
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
+
+CHECKOUT OPTIONS:
+  SiroSDK:
+    :git: https://github.com/Siro-ai/SiroSDK
+    :tag: 1.3.9
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
@@ -1464,10 +1469,10 @@ SPEC CHECKSUMS:
   React-utils: f1d39255e788c280589665da427d574d9ff84df2
   ReactCommon: cda2cdd9f45187316ef45e1cb70e1d2058f9aea1
   SiroReactNative: 1ee920aa4d4abfdff43acf79ecdc950854459fc5
-  SiroSDK: 43eada684aee16cab7cc91db2326ceb7e44a54c5
+  SiroSDK: 994dbf8cd55fc21c1ecdf0d25245ca7ce8d7e6aa
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
 
-PODFILE CHECKSUM: 97fcddb1d572d97d13b68284eaad22ff0a95d32d
+PODFILE CHECKSUM: 62d71fc981ab23566f0ea3af3494b0ada645a1bc
 
 COCOAPODS: 1.11.3
