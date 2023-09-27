@@ -65,7 +65,7 @@ platform :ios, 15.0
 
 ### Usage
 
-1. call `setup` and pass in your `enviornment`. Currently we support `staging` and `production`.
+1. call `setup` and pass in your `environment`. Currently we support `staging` and `production`.
 
 2. Import the `SiroButton` and drop in within any view. `SiroButton` takes no props. The `SiroButton` controls the Siro recording modal. The Siro Recording Modal gets embedded into the root view of your app automatically.
 
@@ -107,22 +107,15 @@ Sets up the SiroSDK. Must be called before utilizing the SDK. If `setup` is not 
 
 Returns a boolean indicating whether the user is logged into the SiroSDK.
 
-### function startRecording()
-
-Starts a recording. User will be asked for access to their location + microphone upon calling the `startRecording` function if they have not yet given the SiroSDK access. Once access is granted, `startRecording` will begin recording conversations.
-Please note that there can only ever be one active recording instance. User must be logged in.
-
----
-
-### function stopRecording()
-
-Stops the currently active recording session. If there is no active recording session, no action is taken.
-
 ---
 
 ### function sendEvent(eventName: string, interactionData?: InteractionData)
 
 Sends an event along with any Lead or Interaction data. Events can trigger actions that control the Siro Recorder.
+
+Please note, events must be configured to start, stop, and pause the recorder. Contact chris@siro.ai for event configuration.
+
+
 
 ```typescript
 import { sendEvent } from "expo-siro";

@@ -662,21 +662,21 @@ PODS:
     - React-Core (= 0.72.3)
     - React-jsi (= 0.72.3)
     - ReactCommon/turbomodule/core (= 0.72.3)
-  - FirebaseAppCheckInterop (10.14.0)
+  - FirebaseAppCheckInterop (10.15.0)
   - FirebaseAuth (10.12.0):
     - FirebaseAppCheckInterop (~> 10.0)
     - FirebaseCore (~> 10.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
     - GoogleUtilities/Environment (~> 7.8)
     - GTMSessionFetcher/Core (< 4.0, >= 2.1)
-  - FirebaseAuthInterop (10.14.0)
-  - FirebaseCore (10.14.0):
+  - FirebaseAuthInterop (10.15.0)
+  - FirebaseCore (10.15.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/Logger (~> 7.8)
-  - FirebaseCoreExtension (10.14.0):
+  - FirebaseCoreExtension (10.15.0):
     - FirebaseCore (~> 10.0)
-  - FirebaseCoreInternal (10.14.0):
+  - FirebaseCoreInternal (10.15.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
   - FirebaseDynamicLinks (10.12.0):
     - FirebaseCore (~> 10.0)
@@ -698,7 +698,7 @@ PODS:
     - FirebaseCoreExtension (~> 10.0)
     - FirebaseFirestore (~> 10.0)
     - FirebaseSharedSwift (~> 10.0)
-  - FirebaseSharedSwift (10.14.0)
+  - FirebaseSharedSwift (10.15.0)
   - FirebaseStorage (10.12.0):
     - FirebaseAppCheckInterop (~> 10.0)
     - FirebaseAuthInterop (~> 10.0)
@@ -1205,10 +1205,10 @@ PODS:
     - React-jsi (= 0.72.3)
     - React-logger (= 0.72.3)
     - React-perflogger (= 0.72.3)
-  - SiroReactNative (0.5.0):
+  - SiroReactNative (0.7.7):
     - ExpoModulesCore
-    - SiroSDK
-  - SiroSDK (1.3.8):
+    - SiroSDK (~> 1.3.7)
+  - SiroSDK (1.3.7):
     - FirebaseAuth (~> 10.12.0)
     - FirebaseDynamicLinks (~> 10.12.0)
     - FirebaseFirestore (~> 10.12.0)
@@ -1266,7 +1266,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - SiroReactNative (from `../../ios`)
-  - SiroSDK (from `~/development/siro/SiroSDK/`)
+  - SiroSDK (from `~/development/siro/SiroSDK`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1390,7 +1390,8 @@ EXTERNAL SOURCES:
   SiroReactNative:
     :path: "../../ios"
   SiroSDK:
-    :path: "~/development/siro/SiroSDK/"
+    :path: "~/development/siro/SiroSDK"
+    :tag: 1.3.7
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1408,16 +1409,16 @@ SPEC CHECKSUMS:
   ExpoModulesCore: 0a114333f029eaa2edc701334515b4e05343fac3
   FBLazyVector: 4cce221dd782d3ff7c4172167bba09d58af67ccb
   FBReactNativeSpec: c6bd9e179757b3c0ecf815864fae8032377903ef
-  FirebaseAppCheckInterop: c87f1d5421c852413dd936b2b2340b21e62501a0
+  FirebaseAppCheckInterop: a8c555b1c2db1d9445e6c3a08a848167ddb7eb51
   FirebaseAuth: a66c1e14ec58f41d154a4b41ce1a23ea00ad4805
-  FirebaseAuthInterop: 23be77be1ca68e4bd15214f403f807a6ca70d7e0
-  FirebaseCore: 6fc17ac9f03509d51c131298aacb3ee5698b4f02
-  FirebaseCoreExtension: 976638051b1a46b503afce7ec80277f9161f2040
-  FirebaseCoreInternal: d558159ee6cc4b823c2296ecc193de9f6d9a5bb3
+  FirebaseAuthInterop: b566e21e2bc5e44a4d44babc56d05a7e5c10493b
+  FirebaseCore: 2cec518b43635f96afe7ac3a9c513e47558abd2e
+  FirebaseCoreExtension: d3f1ea3725fb41f56e8fbfb29eeaff54e7ffb8f6
+  FirebaseCoreInternal: 2f4bee5ed00301b5e56da0849268797a2dd31fb4
   FirebaseDynamicLinks: 1a387da899779e5ef34f4d6f8bdba882f90d0e67
   FirebaseFirestore: f94c9541515fa4a49af52269bbc50349009424b4
   FirebaseFirestoreSwift: 7a81b69579c3fddaf082a8be08d362a1d9c9cf49
-  FirebaseSharedSwift: 0eec812f08b6ec9e03196fc27635739781513028
+  FirebaseSharedSwift: 34b11d9e675e14ee55e160cb7645bba30a192d14
   FirebaseStorage: 1d7ca8c8953fc61ccacaa7c612696b5402968a0d
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
@@ -1462,11 +1463,11 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 512c567151e391a352e67e04e7a479ddc6f2a0a0
   React-utils: f1d39255e788c280589665da427d574d9ff84df2
   ReactCommon: cda2cdd9f45187316ef45e1cb70e1d2058f9aea1
-  SiroReactNative: 2083f764bb7bb59bbeb33c76ed92a498145d51f8
-  SiroSDK: ccdce045be2318293837035b3a62f15040455e9e
+  SiroReactNative: 1ee920aa4d4abfdff43acf79ecdc950854459fc5
+  SiroSDK: 43eada684aee16cab7cc91db2326ceb7e44a54c5
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
 
-PODFILE CHECKSUM: 05d8d14d088a90cd87aad30d9d1abee55faccb2f
+PODFILE CHECKSUM: 97fcddb1d572d97d13b68284eaad22ff0a95d32d
 
 COCOAPODS: 1.11.3

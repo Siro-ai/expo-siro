@@ -4,6 +4,7 @@ import SiroReactNativeModule from "./SiroReactNativeModule";
 import SiroButton from "./SiroReactNativeView";
 import { Interaction, Environment } from "./types";
 
+
 /**
  * Whether the SiroSDK has been initialized.
  */
@@ -13,6 +14,7 @@ export const initialized = SiroReactNativeModule.initialized as boolean;
  * Whether the SiroSDK Modal is currently visible.
  */
 export const visible = SiroReactNativeModule.visible as boolean;
+
 
 /**
  * Sets up the SiroSDK.
@@ -37,20 +39,6 @@ export function hide() {
 }
 
 /**
- * Starts the Siro Recorder, if not already started. Does nothing if a recording is already in progress.
- */
-export function startRecording() {
-  SiroReactNativeModule.startRecording();
-}
-
-/**
- * Stops the Siro Recorder, if not already stopped. Does nothing if a recording is not in progress.
- */
-export function stopRecording() {
-  SiroReactNativeModule.stopRecording();
-}
-
-/**
  * Sends an event, which can trigger recorder actions (e.g., start, stop, or discard a recording).
  *
  * Include the `data` parameter to send additional data with the event. The data is specific to the event.
@@ -69,6 +57,7 @@ export function sendEvent(event: string, data?: Interaction) {
 export function showModal() {
   SiroReactNativeModule.showModal();
 }
+
 
 /**
  * Returns a boolean indicating whether the user is logged in.

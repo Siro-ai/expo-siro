@@ -40,13 +40,6 @@ export default function App() {
     SiroReactNative.setup(SiroReactNative.Environment.staging);
   };
 
-  const startRecording = () => {
-    SiroReactNative.startRecording();
-  };
-
-  const stopRecording = () => {
-    SiroReactNative.stopRecording();
-  };
 
   const sendEvent = (eventName: string, data?: SiroReactNative.Interaction) => {
     SiroReactNative.sendEvent(eventName, data);
@@ -65,30 +58,24 @@ export default function App() {
       <Text style={{ marginBottom: 20 }}>SiroSDK Example App</Text>
       <Text>Is user logged in {String(isLoggedIn)}</Text>
       <Button title="Step 1 - Login to Siro" onPress={showModal} />
-      <Button title="Step 2 - Start Recording!" onPress={startRecording} />
 
       <Text style={{ marginBottom: 20 }}>Test Events</Text>
       <Button
-        title="Step 3 - Send event!"
+        title="Step 2 - Send event!"
         onPress={() => sendEvent("Random Event", interaction)}
       />
       <Button
-        title="Step 4 - Send dropPin event!"
+        title="Step 3 - Send dropPin event!"
         onPress={() => sendEvent("dropPin", interaction)}
       />
       <Button
-        title="Step 5 - Send createLead event!"
+        title="Step 4 - Send createLead event!"
         onPress={() => sendEvent("createLead")}
       />
       <Button
-        title="Step 6 - Send leadClosed event!"
+        title="Step 5 - Send leadClosed event!"
         onPress={() => sendEvent("leadClosed")}
       />
-      <Button
-        title="Step 7 - Stop Recording!"
-        onPress={() => stopRecording()}
-      />
-
       <SiroReactNative.SiroButton />
     </View>
   );
