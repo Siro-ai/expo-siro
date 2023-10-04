@@ -43,10 +43,20 @@ public class SiroReactNativeModule: Module {
         SiroSDK.setup(environment: environmentEnum)
     }
 
-    Function("sendEvent") { (eventName: String, leadData: [String: Any]?) in
+    AsyncFunction("sendEvent") { (eventName: String, leadDataString: String?) in
         DispatchQueue.main.async {
-            SiroSDK.sendEvent(eventName, interactionData: nil)
-        }
+
+           do {
+               if let leadData = leadDataString?.data(using: .utf8) {
+                   let decodedData = try JSONDecoder().decode(InteractionData.self, from: leadData)
+                   SiroSDK.sendEvent(eventName, interactionData: decodedData)
+               } else {
+                   SiroSDK.sendEvent(eventName, interactionData: nil)
+               }
+           } catch {
+            print("An error occurred while calling sendEvent: \(error)")
+           }
+                    }
     }
 
     Function("hide") {

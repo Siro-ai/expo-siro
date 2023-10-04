@@ -47,8 +47,8 @@ export function hide() {
  * @param {string} event The event to send.
  * @param {Interaction} data The data to send with the event.
  */
-export function sendEvent(event: string, data?: Interaction) {
-  SiroReactNativeModule.sendEvent(event, data);
+export async function sendEvent(event: string, data?: Interaction) {
+  return await SiroReactNativeModule.sendEvent(event, data !== undefined ? JSON.stringify(data) : undefined);
 }
 
 /**

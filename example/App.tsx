@@ -41,8 +41,8 @@ export default function App() {
   };
 
 
-  const sendEvent = (eventName: string, data?: SiroReactNative.Interaction) => {
-    SiroReactNative.sendEvent(eventName, data);
+  const sendEvent = async (eventName: string, data?: SiroReactNative.Interaction) => {
+    await SiroReactNative.sendEvent(eventName, data);
   };
 
   const showModal = () => {
