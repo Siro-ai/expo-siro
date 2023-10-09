@@ -5,11 +5,34 @@ import * as SiroReactNative from "siro-react-native";
 
 const interaction: SiroReactNative.Interaction = {
   id: "123",
-
   userId: "externalId",
   note: "Got the sale!",
   leadDateCreated: new Date(),
   dateCreated: new Date(),
+  contacts: [],
+  leadId: "leadId",
+  coordinates: { latitude: 0, longitude: 0 },
+  stage: {
+    id: "stageId",
+    name: "stageName",
+    color: "#000",
+    icon: "icon.jpg",
+    won: true,
+    interacted: true,
+  },
+  metadata: {
+    some: "data",
+    someNumber: 5,
+    somebool: true,
+    someArray: ["rrr", 2, true],
+  },
+};
+
+const interactionWithoutDateCreated: SiroReactNative.Interaction = {
+  id: "123",
+  userId: "externalId",
+  note: "Got the sale!",
+  leadDateCreated: new Date(),
   contacts: [],
   leadId: "leadId",
   coordinates: { latitude: 0, longitude: 0 },
@@ -40,8 +63,10 @@ export default function App() {
     SiroReactNative.setup(SiroReactNative.Environment.staging);
   };
 
-
-  const sendEvent = async (eventName: string, data?: SiroReactNative.Interaction) => {
+  const sendEvent = async (
+    eventName: string,
+    data?: SiroReactNative.Interaction
+  ) => {
     await SiroReactNative.sendEvent(eventName, data);
   };
 
@@ -61,8 +86,8 @@ export default function App() {
 
       <Text style={{ marginBottom: 20 }}>Test Events</Text>
       <Button
-        title="Step 2 - Send event!"
-        onPress={() => sendEvent("Random Event", interaction)}
+        title="Step 2 - Send event without Datecreated!"
+        onPress={() => sendEvent("Random Event", interactionWithoutDateCreated)}
       />
       <Button
         title="Step 3 - Send dropPin event!"
@@ -70,7 +95,7 @@ export default function App() {
       />
       <Button
         title="Step 4 - Send createLead event!"
-        onPress={() => sendEvent("createLead")}
+        onPress={() => sendEvent("startRecording", interaction)}
       />
       <Button
         title="Step 5 - Send leadClosed event!"

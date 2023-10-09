@@ -789,6 +789,7 @@ PODS:
   - hermes-engine/Pre-built (0.72.3)
   - leveldb-library (1.22.2)
   - libevent (2.1.12)
+  - Mixpanel (4.1.6)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -1205,15 +1206,16 @@ PODS:
     - React-jsi (= 0.72.3)
     - React-logger (= 0.72.3)
     - React-perflogger (= 0.72.3)
-  - SiroReactNative (0.7.7):
+  - SiroReactNative (0.7.8):
     - ExpoModulesCore
-    - SiroSDK (~> 1.3.7)
-  - SiroSDK (1.3.9):
+    - SiroSDK
+  - SiroSDK (1.3.3):
     - FirebaseAuth (~> 10.12.0)
     - FirebaseDynamicLinks (~> 10.12.0)
     - FirebaseFirestore (~> 10.12.0)
     - FirebaseFirestoreSwift (~> 10.12.0)
     - FirebaseStorage (~> 10.12.0)
+    - Mixpanel (~> 4.1.4)
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
 
@@ -1266,7 +1268,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - SiroReactNative (from `../../ios`)
-  - SiroSDK (from `https://github.com/Siro-ai/SiroSDK`, tag `1.3.9`)
+  - SiroSDK (from `~/development/siro/SiroSDK`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1291,6 +1293,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - libevent
+    - Mixpanel
     - nanopb
     - PromisesObjC
     - SocketRocket
@@ -1390,15 +1393,9 @@ EXTERNAL SOURCES:
   SiroReactNative:
     :path: "../../ios"
   SiroSDK:
-    :git: https://github.com/Siro-ai/SiroSDK
-    :tag: 1.3.9
+    :path: "~/development/siro/SiroSDK"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
-
-CHECKOUT OPTIONS:
-  SiroSDK:
-    :git: https://github.com/Siro-ai/SiroSDK
-    :tag: 1.3.9
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
@@ -1434,6 +1431,7 @@ SPEC CHECKSUMS:
   hermes-engine: 10fbd3f62405c41ea07e71973ea61e1878d07322
   leveldb-library: f03246171cce0484482ec291f88b6d563699ee06
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  Mixpanel: 98578ca87dc11fe948555bfcdd7382711de7a206
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
@@ -1468,11 +1466,11 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 512c567151e391a352e67e04e7a479ddc6f2a0a0
   React-utils: f1d39255e788c280589665da427d574d9ff84df2
   ReactCommon: cda2cdd9f45187316ef45e1cb70e1d2058f9aea1
-  SiroReactNative: 1ee920aa4d4abfdff43acf79ecdc950854459fc5
-  SiroSDK: 994dbf8cd55fc21c1ecdf0d25245ca7ce8d7e6aa
+  SiroReactNative: 0869f5b4026e75d8adaf81bdcc467a9ac4137403
+  SiroSDK: 3f11cf4f13088aaa532fbd70f147755fa7184022
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
 
-PODFILE CHECKSUM: 62d71fc981ab23566f0ea3af3494b0ada645a1bc
+PODFILE CHECKSUM: 45ef029f38e763b023cdfd12ed2d957eaad19e09
 
 COCOAPODS: 1.11.3
