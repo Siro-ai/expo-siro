@@ -48,7 +48,9 @@ public class SiroReactNativeModule: Module {
 
            do {
                if let leadData = leadDataString?.data(using: .utf8) {
-                   let decodedData = try JSONDecoder().decode(InteractionData.self, from: leadData)
+                   let decodedData = try JSONDecoder().decode(InteractionData.self, from: leadData) as InteractionData
+                   
+                   
                    SiroSDK.sendEvent(eventName, interactionData: decodedData)
                } else {
                    SiroSDK.sendEvent(eventName, interactionData: nil)

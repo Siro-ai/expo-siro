@@ -42,7 +42,8 @@ target 'siroreactnativeexample' do
   use_expo_modules!
   config = use_native_modules!
   
-  pod 'SiroSDK',  :git => 'https://github.com/Siro-ai/SiroSDK', :tag => '1.3.9'
+  pod 'SiroSDK',  :path => '~/development/siro/SiroSDK'
+
   # pod 'AnyCodable'
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
